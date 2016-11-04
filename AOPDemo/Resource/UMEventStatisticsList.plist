@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LoginViewController</key>
+	<array>
+		<dict>
+			<key>EventId</key>
+			<string>login</string>
+			<key>Params</key>
+			<array/>
+			<key>EventName</key>
+			<string>loginButtonClickedEvent:</string>
+		</dict>
+		<dict>
+			<key>EventId</key>
+			<string>register</string>
+			<key>Params</key>
+			<array/>
+			<key>EventName</key>
+			<string>registerButtonClickedEvent:</string>
+		</dict>
+		<dict>
+			<key>EventId</key>
+			<string>forgetPasswordClick</string>
+			<key>Params</key>
+			<array/>
+			<key>EventName</key>
+			<string>forgetPasswordButtonClickedEvent:</string>
+		</dict>
+		<dict>
+			<key>EventId</key>
+			<string>SendCaptcha</string>
+			<key>Params</key>
+			<array/>
+			<key>EventName</key>
+			<string>captchaButtonClickedEvent:</string>
+		</dict>
+		<dict>
+			<key>EventId</key>
+			<string>UserServiceHelper</string>
+			<key>Params</key>
+			<array/>
+			<key>EventName</key>
+			<string>serviceButtonClickedEvent:</string>
+		</dict>
+	</array>
+</dict>
+</plist>
