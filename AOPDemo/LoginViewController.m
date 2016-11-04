@@ -32,8 +32,8 @@
     [self.view addSubview:self.usernameTextField];
     [self.view addSubview:self.passwordTextField];
     [self.view addSubview:self.loginButton];
-//    [self.view addSubview:self.registerButton];
-//    [self.view addSubview:self.forgetPWButton];
+    [self.view addSubview:self.registerButton];
+    [self.view addSubview:self.forgetPWButton];
     
     self.view.backgroundColor = [UIColor whiteColor];
 }
@@ -45,7 +45,8 @@
 
 #pragma mark - HttpRequest
 
-- (void)requestLoginWithUsername:(NSString *)username password:(NSString *)password {
+- (void)requestLoginWithUsername:(NSString *)username
+                        password:(NSString *)password {
     //发起网络请求
     
 }
@@ -69,7 +70,8 @@
 
 - (UILabel *)nameLabel {
     if (nil == _nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDHT-100)/2.0, 80, 100, 30)];
+        _nameLabel = [[UILabel alloc] initWithFrame:
+                      CGRectMake((SCREEN_WIDHT-100)/2.0, 80, 100, 30)];
         _nameLabel.text = @"AOPDemo";
         _nameLabel.textColor = [UIColor darkTextColor];
     }
@@ -79,7 +81,8 @@
 
 - (UITextField *)usernameTextField {
     if (nil == _usernameTextField) {
-        _usernameTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 200, (SCREEN_WIDHT-40), 35)];
+        _usernameTextField = [[UITextField alloc] initWithFrame:
+                              CGRectMake(20, 200, (SCREEN_WIDHT-40), 35)];
         _usernameTextField.placeholder = @"用户名";
         _usernameTextField.layer.borderColor = [UIColor grayColor].CGColor;
         _usernameTextField.layer.borderWidth = 0.5f;
@@ -90,7 +93,8 @@
 
 - (UITextField *)passwordTextField {
     if (nil == _passwordTextField) {
-        _passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(20, 250, (SCREEN_WIDHT-40), 35)];
+        _passwordTextField = [[UITextField alloc] initWithFrame:
+                              CGRectMake(20, 250, (SCREEN_WIDHT-40), 35)];
         _passwordTextField.placeholder = @"密码";
         _passwordTextField.secureTextEntry = YES;
         _passwordTextField.layer.borderColor = [UIColor grayColor].CGColor;
@@ -114,6 +118,32 @@
     }
     
     return _loginButton;
+}
+
+- (UIButton *)registerButton {
+    if (nil == _registerButton) {
+        _registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _registerButton.frame = CGRectMake(20, 350, 100, 30);
+        [_registerButton setTitle:@"注册" forState:UIControlStateNormal];
+        [_registerButton setTitleColor:[UIColor grayColor]
+                              forState:UIControlStateNormal];
+        _registerButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    }
+    
+    return _registerButton;
+}
+
+- (UIButton *)forgetPWButton {
+    if (nil == _forgetPWButton) {
+        _forgetPWButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _forgetPWButton.frame = CGRectMake(SCREEN_WIDHT-20-100, 350, 100, 30);
+        [_forgetPWButton setTitle:@"忘记密码" forState:UIControlStateNormal];
+        [_forgetPWButton setTitleColor:[UIColor grayColor]
+                              forState:UIControlStateNormal];
+        _forgetPWButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    }
+    
+    return _forgetPWButton;
 }
 
 @end

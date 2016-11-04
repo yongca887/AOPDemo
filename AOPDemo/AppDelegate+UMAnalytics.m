@@ -51,7 +51,7 @@
     }                               error:NULL];
 
     [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id <AspectInfo> aspectInfo) {
-        [MobClick beginLogPageView:NSStringFromClass([self class])];
+        [MobClick endLogPageView:NSStringFromClass([self class])];
     }                               error:NULL];
 
     // 设置事件统计
