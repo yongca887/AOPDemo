@@ -18,7 +18,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //配置友盟分析
+    [self configureUmengTrack];
+    //设置页面统计和事件统计
+    [self setupAnalytics];
+    
     // Init Windows.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Init login View Controller.
@@ -26,11 +30,6 @@
     // Set Root View Controller.
     self.window.rootViewController = loginViewCtrl;
     [self.window makeKeyAndVisible];
-    
-    //配置友盟分析
-    [self configureUmengTrack];
-    //设置页面统计和事件统计
-    [self setupAnalytics];
     
     return YES;
 }
