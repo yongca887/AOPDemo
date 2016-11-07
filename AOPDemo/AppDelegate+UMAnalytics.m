@@ -46,12 +46,12 @@
 
 - (void)setupAnalytics {
     // 设置页面统计
-    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id <AspectInfo> aspectInfo) {
-        [MobClick beginLogPageView:NSStringFromClass([self class])];
+    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id <AspectInfo> aspectInfo, BOOL animated) {
+        NSLog(@"%@-->:%@", @"Appear:😜😜😜", NSStringFromClass([aspectInfo.instance class]));
     }                               error:NULL];
-
-    [UIViewController aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionAfter usingBlock:^(id <AspectInfo> aspectInfo) {
-        [MobClick endLogPageView:NSStringFromClass([self class])];
+    
+    [UIViewController aspect_hookSelector:NSSelectorFromString(@"dealloc") withOptions:AspectPositionBefore usingBlock:^(id <AspectInfo> aspectInfo) {
+        NSLog(@"%@-->:%@", @"Dealloc:😂😂😂", NSStringFromClass([aspectInfo.instance class]));
     }                               error:NULL];
 
     // 设置事件统计
